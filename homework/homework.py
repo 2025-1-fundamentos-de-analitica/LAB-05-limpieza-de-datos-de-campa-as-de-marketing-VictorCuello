@@ -89,14 +89,12 @@ def clean_campaign_data():
         {"year": 2022, "month": df["month"].map(month_map), "day": df["day"]}
     )
     
-    # CORRECCIÓN: Usar el nombre de columna correcto: 'last_contact_date'
     campaign_df["last_contact_date"] = temp_date.dt.strftime('%Y-%m-%d')
 
     # --- 3. Creación de economics.csv ---
     economics_df = pd.DataFrame()
     economics_df["client_id"] = df["client_id"]
     
-    # CORRECCIÓN: Usar los nombres de columna correctos: 'cons_price_idx' y 'euribor_three_months'
     economics_df["cons_price_idx"] = df["cons_price_idx"]
     economics_df["euribor_three_months"] = df["euribor_three_months"]
 
